@@ -6,8 +6,8 @@ public class Start {
 		// Create object of the game class
 		Game games = new Game();
 		// Start the game
-		games.setGame();
+		games.startGame();
 		
 	}
-
+	
 }
