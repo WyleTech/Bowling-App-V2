@@ -17,13 +17,17 @@ public class Game {
 	
 	public void startGame() {
 		// TODO logic for adding bowlers with arraylist of bowlers -- Kyle still working on it.
-		ArrayList<String> bowlerList = new ArrayList<>();
+		ArrayList<Bowler> bowlerList = new ArrayList<>();
 		Scanner sc = new Scanner(System.in);
 
 		// ***Kyle Additions***//
 		do {
 			System.out.println("Welcome to WyleTech Bowling! \nPlease enter your name");
-			bowlerList.add(sc.next());
+			Bowler.name(sc.next());
+			
+			//Not certain if this is correct!!!!!
+			addBowler(new Bowler(Bowler.getName(), null, RegularFrame));
+			
 			// prompt for next player
 			System.out.println("Would you like to add a player? yes or no?");
 			// While loop for adding players if user enters a char "y"
@@ -36,6 +40,13 @@ public class Game {
 			setGame();
 		}
 	}
+	
+	//Brainstorming on adding the bowler
+	private void addBowler(Bowler name) {
+		// TODO Auto-generated method stub
+		bowlerList.add(name);
+	}
+		
 
 	//***Kyle Additions***//
 	private String addPlayers() {
