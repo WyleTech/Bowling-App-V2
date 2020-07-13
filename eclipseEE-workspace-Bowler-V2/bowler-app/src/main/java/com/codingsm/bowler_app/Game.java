@@ -8,15 +8,46 @@ public class Game {
 	private static ArrayList<RegularFrame> game = new ArrayList<>();
 	// Keep track of the RegularFrame
 	private int RegularFrame = 1;
-	private Scanner sc = new Scanner(System.in);
-	private boolean isOver = false;
+	// Create a Scanner object
+	Scanner sc = new Scanner(System.in); 
+	// Determine if game is over
+	private boolean isOver = false; 
+	
+	 
 	
 	public void startGame() {
-		//TODO logic for adding bowlers with arraylist of bowlers
-		ArrayList<Bowler> bowlerList = new ArrayList<>();
-		
-		setGame();
+		// TODO logic for adding bowlers with arraylist of bowlers -- Kyle still working on it.
+		ArrayList<String> bowlerList = new ArrayList<>();
+		Scanner sc = new Scanner(System.in);
+
+		// ***Kyle Additions***//
+		do {
+			System.out.println("Welcome to WyleTech Bowling! \nPlease enter your name");
+			bowlerList.add(sc.next());
+			// prompt for next player
+			System.out.println("Would you like to add a player? yes or no?");
+			// While loop for adding players if user enters a char "y"
+		} while (sc.next().startsWith("y"));
+		startGame();
+
+		// If statement, determining solo or multi-player game
+		if (sc.next().startsWith("n")); {
+			System.out.println("Have fun bowling!");
+			setGame();
+		}
 	}
+
+	//***Kyle Additions***//
+	private String addPlayers() {
+		//TODO 
+		String numOfPlayers;
+	    System.out.println("How many players will be bowling?");
+	    numOfPlayers = sc.next();
+	    
+	    return numOfPlayers; 
+	
+	}
+	
 	// Start the game from the main()
 	public void setGame() {
 		

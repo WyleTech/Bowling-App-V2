@@ -5,9 +5,16 @@ import java.util.ArrayList;
 public class Bowler {
 
 	private static ArrayList<Frame> game = new ArrayList<>();
-	String firstName;
+	String name;
 	String lastName = null;
 	int score;
+	
+	//***Kyle Additions//
+	Bowler(String name, String lastName, int score){
+		this.name = name;
+		this.score = score;
+		this.lastName = lastName;
+	}
 	
 	private void updateScore() {
 		//TODO
